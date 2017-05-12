@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="AssetManager.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GameDefaults.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GameLevel.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GameLoop.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GameStateManager.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Level1.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderManager.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ScreenGrid.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Wave.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>Source\Proto</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>Source\Proto</Filter>
+    </ClCompile>
+    <ClCompile Include="Controls.cpp">
+      <Filter>Source\Proto</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>Source\Proto</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics.cpp">
+      <Filter>Source\Proto</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Source\Proto</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AssetManager.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameDefaults.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameLevel.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStateManager.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Level1.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderManager.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ScreenGrid.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wave.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>Headers\Proto</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>Headers\Proto</Filter>
+    </ClInclude>
+    <ClInclude Include="Controls.h">
+      <Filter>Headers\Proto</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>Headers\Proto</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics.h">
+      <Filter>Headers\Proto</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Headers\Proto</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="explosion-4.wav">
+      <Filter>Ressources</Filter>
+    </Media>
+    <Media Include="Fairlight.wav">
+      <Filter>Ressources</Filter>
+    </Media>
+    <Media Include="Fortress_Instrumental.wav">
+      <Filter>Ressources</Filter>
+    </Media>
+    <Media Include="space-engine.wav">
+      <Filter>Ressources</Filter>
+    </Media>
+    <Media Include="Spacerace.wav">
+      <Filter>Ressources</Filter>
+    </Media>
+    <Media Include="warpdrive02.wav">
+      <Filter>Ressources</Filter>
+    </Media>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="EnemyShip.bmp">
+      <Filter>Ressources</Filter>
+    </Image>
+    <Image Include="Planet1.bmp">
+      <Filter>Ressources</Filter>
+    </Image>
+    <Image Include="Planet2.bmp">
+      <Filter>Ressources</Filter>
+    </Image>
+    <Image Include="Planet3.bmp">
+      <Filter>Ressources</Filter>
+    </Image>
+    <Image Include="SectorBackground.bmp">
+      <Filter>Ressources</Filter>
+    </Image>
+    <Image Include="ShipBase.bmp">
+      <Filter>Ressources</Filter>
+    </Image>
+    <Image Include="ShipDetail.bmp">
+      <Filter>Ressources</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{8b941add-7614-4dfa-8864-f9e485ecb157}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{81eef51c-5084-430b-a2b7-93bba54fa532}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ressources">
+      <UniqueIdentifier>{945694fa-66b0-41ba-8f2c-f4e9f7a65687}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Proto">
+      <UniqueIdentifier>{c045f2ec-3a2d-4102-843c-7fdd19bf6f7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Proto">
+      <UniqueIdentifier>{6272f659-81a8-482b-8f4b-55d8a366c6ce}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
