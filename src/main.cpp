@@ -1,6 +1,7 @@
 #include "VulkanRenderer.h"
 #include <GLFW/glfw3.h>
 #include <iostream>
+#include <memory>
 
 int main() {
     if (!glfwInit()) {
@@ -8,7 +9,9 @@ int main() {
         return -1;
     }
     glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
-    GLFWwindow* window = glfwCreateWindow(800, 600, "Space Game Vulkan", nullptr, nullptr);
+    auto windowDeleter = [](GLFWwindow* w){ if (w) glfwDestroyWindow(w); };
+    std::unique_ptr<GLFWwindow, decltype(windowDeleter)> window(
+        glfwCreateWindow(800, 600, "Space Game Vulkan", nullptr, nullptr), windowDeleter);
     if (!window) {
         std::cerr << "Failed to create window" << std::endl;
         glfwTerminate();
@@ -17,7 +20,7 @@ int main() {
 
     VulkanRenderer renderer;
     try {
-        renderer.init(window);
+        renderer.init(window.get());
     } catch (const std::exception& e) {
         std::cerr << e.what() << std::endl;
         glfwDestroyWindow(window);
@@ -25,12 +28,11 @@ int main() {
         return -1;
     }
 
-    while (!glfwWindowShouldClose(window)) {
+    while (!glfwWindowShouldClose(window.get())) {
         glfwPollEvents();
         renderer.draw();
     }
 
-    glfwDestroyWindow(window);
     glfwTerminate();
     return 0;
 }

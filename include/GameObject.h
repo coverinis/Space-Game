@@ -7,15 +7,16 @@
 */
 #pragma once
 #include "AssetManager.h"
+#include <memory>
 
 class GameObject
 {
 public:
 	float x = 0;
 	float y = 0;
-	float angle = 0;
-	AssetManager* asset_manager_;
-	GameObject(AssetManager* asset_manager, float x, float y, float angle);
-	virtual ~GameObject();
+        float angle = 0;
+        std::unique_ptr<AssetManager> asset_manager_;
+        GameObject(std::unique_ptr<AssetManager> asset_manager, float x, float y, float angle);
+        virtual ~GameObject();
 };
 

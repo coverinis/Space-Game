@@ -15,6 +15,7 @@
 #include "GameStateManager.h"
 #include "GameDefaults.h"
 #include <iostream>
+#include <memory>
 #include <string>
 #define DEBUG
 
@@ -116,8 +117,8 @@ int WINAPI wWinMain(
 	GameLevel::Init(render_manager);
 	//Show the Window
 	ShowWindow(window_handle, nCmdShow);
-	//Load Level
-	GameStateManager::LoadInitialLevel(new Level1());
+        //Load Level
+        GameStateManager::LoadInitialLevel(std::make_unique<Level1>());
 	//Ship coordinates
 	int x = 0 + O_CENTER_X;
 	int y = 300 + O_CENTER_Y;

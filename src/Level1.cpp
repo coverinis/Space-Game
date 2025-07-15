@@ -9,7 +9,8 @@
 #define DEBUG
 #include "Level1.h"
 #include "GameStateManager.h"
-#include <cmath> 
+#include <cmath>
+#include <memory>
 
 
 Level1::Level1()
@@ -65,98 +66,98 @@ void Level1::Load()
 	audio_[0].Play();
 	time[0] = timeGetTime();
 
-	grid_ = new ScreenGrid(ship_x_,ship_y_);
-       scene_asset_manager_ = new AssetManager(L"assets/images/SectorBackground.bmp", render_manager,0,1,0,0.78);
+        grid_ = std::make_unique<ScreenGrid>(ship_x_,ship_y_);
+       scene_asset_manager_ = std::make_unique<AssetManager>(L"assets/images/SectorBackground.bmp", render_manager,0,1,0,0.78);
 
 	//Add Planets
 	for (int i = 0; i < grid_->grid_space.size(); ++i)
 	{
 		for (int j = 0; j < grid_->grid_space[0].size(); ++j)
 		{
-			switch ((int)grid_->grid_space[i][j][2])
-			{
-			case NONE:
-				break;
-			case PLANET1:
-				objects_.push_back(GameObject(
-                                       new AssetManager(L"assets/images/Planet1.bmp", render_manager, 0, 1, 0, 0.78),
-					grid_->grid_space[i][j][0],
-					grid_->grid_space[i][j][1],
-					0)
-				);
-				break;
-			case PLANET2:
-				objects_.push_back(GameObject(
-                                       new AssetManager(L"assets/images/Planet2.bmp", render_manager, 0, 1, 0, 0.78),
-					grid_->grid_space[i][j][0],
-					grid_->grid_space[i][j][1],
-					0)
-					);
-				break;
-			case PLANET3:
-				objects_.push_back(GameObject(
-                                       new AssetManager(L"assets/images/Planet3.bmp", render_manager, 0, 1, 0, 0.78),
-					grid_->grid_space[i][j][0],
-					grid_->grid_space[i][j][1],
-					0)
-					);
-				break;
-			default:
-				break;
+                        switch (static_cast<GridObject>(grid_->grid_space[i][j][2]))
+                        {
+                        case GridObject::None:
+                                break;
+                        case GridObject::Planet1:
+                                objects_.push_back(GameObject(
+                                       std::make_unique<AssetManager>(L"assets/images/Planet1.bmp", render_manager, 0, 1, 0, 0.78),
+                                        grid_->grid_space[i][j][0],
+                                        grid_->grid_space[i][j][1],
+                                        0)
+                                );
+                                break;
+                        case GridObject::Planet2:
+                                objects_.push_back(GameObject(
+                                       std::make_unique<AssetManager>(L"assets/images/Planet2.bmp", render_manager, 0, 1, 0, 0.78),
+                                        grid_->grid_space[i][j][0],
+                                        grid_->grid_space[i][j][1],
+                                        0)
+                                        );
+                                break;
+                        case GridObject::Planet3:
+                                objects_.push_back(GameObject(
+                                       std::make_unique<AssetManager>(L"assets/images/Planet3.bmp", render_manager, 0, 1, 0, 0.78),
+                                        grid_->grid_space[i][j][0],
+                                        grid_->grid_space[i][j][1],
+                                        0)
+                                        );
+                                break;
+                        default:
+                                break;
 			}
 		}
 	}
 
 	//Add Ship
-	objects_.push_back(GameObject(
-               new AssetManager(L"assets/images/ShipBase.bmp", render_manager, 0, 1, 0, 0.2),
-		grid_->grid_space[ship_x_][ship_y_][0],
-		grid_->grid_space[ship_x_][ship_y_][1],
-		0)
-	);
-	objects_.push_back(GameObject(
-               new AssetManager(L"assets/images/ShipDetail.bmp", render_manager, 0, 1, 0, 0.2),
-		grid_->grid_space[ship_x_][ship_y_][0],
-		grid_->grid_space[ship_x_][ship_y_][1],
-		0)
-	);
+        objects_.push_back(GameObject(
+               std::make_unique<AssetManager>(L"assets/images/ShipBase.bmp", render_manager, 0, 1, 0, 0.2),
+                grid_->grid_space[ship_x_][ship_y_][0],
+                grid_->grid_space[ship_x_][ship_y_][1],
+                0)
+        );
+        objects_.push_back(GameObject(
+               std::make_unique<AssetManager>(L"assets/images/ShipDetail.bmp", render_manager, 0, 1, 0, 0.2),
+                grid_->grid_space[ship_x_][ship_y_][0],
+                grid_->grid_space[ship_x_][ship_y_][1],
+                0)
+        );
 
 	//Add Enemy
 	if (ship_x_ == 0)
 	{
-		objects_.push_back(GameObject(
-                        new AssetManager(L"assets/images/EnemyShip.bmp", render_manager, 0, 0, 1, 0.78),
-			grid_->grid_space[9][ship_y_][0],
-			grid_->grid_space[9][ship_y_][1],
-			0)
-		);
+                objects_.push_back(GameObject(
+                        std::make_unique<AssetManager>(L"assets/images/EnemyShip.bmp", render_manager, 0, 0, 1, 0.78),
+                        grid_->grid_space[9][ship_y_][0],
+                        grid_->grid_space[9][ship_y_][1],
+                        0)
+                );
 	}
 	else if(ship_x_ == 9)
 	{
-		objects_.push_back(GameObject(
-                    new AssetManager(L"assets/images/EnemyShip.bmp", render_manager, 0, 0, 1, 0.78),
-			grid_->grid_space[0][ship_y_][0],
-			grid_->grid_space[0][ship_y_][1],
-			0)
-		);
+                objects_.push_back(GameObject(
+                    std::make_unique<AssetManager>(L"assets/images/EnemyShip.bmp", render_manager, 0, 0, 1, 0.78),
+                        grid_->grid_space[0][ship_y_][0],
+                        grid_->grid_space[0][ship_y_][1],
+                        0)
+                );
 	}
 	else if (ship_y_ == 0)
 	{
-		objects_.push_back(GameObject(
-                    new AssetManager(L"assets/images/EnemyShip.bmp", render_manager, 0, 0, 1, 0.78),
-			grid_->grid_space[ship_x_][9][0],
-			grid_->grid_space[ship_x_][9][1],
-			0)
-		);
+                objects_.push_back(GameObject(
+                    std::make_unique<AssetManager>(L"assets/images/EnemyShip.bmp", render_manager, 0, 0, 1, 0.78),
+                        grid_->grid_space[ship_x_][9][0],
+                        grid_->grid_space[ship_x_][9][1],
+                        0)
+                );
 	}
 	else if (ship_y_ == 9)
 	{
-		objects_.push_back(GameObject(
-                    new AssetManager(L"assets/images/EnemyShip.bmp", render_manager, 0, 0, 1, 0.78),
-			grid_->grid_space[ship_x_][0][0],
-			grid_->grid_space[ship_x_][0][1],
-			0)
-		);
+                objects_.push_back(GameObject(
+                    std::make_unique<AssetManager>(L"assets/images/EnemyShip.bmp", render_manager, 0, 0, 1, 0.78),
+                        grid_->grid_space[ship_x_][0][0],
+                        grid_->grid_space[ship_x_][0][1],
+                        0)
+                );
 	}
 }
 
@@ -168,10 +169,10 @@ void Level1::Load()
 */
 void Level1::Unload()
 {
-	objects_.clear();
-	objects_.swap(std::vector<GameObject>());
-	delete grid_;
-	delete scene_asset_manager_;
+        objects_.clear();
+        objects_.swap(std::vector<GameObject>());
+        grid_.reset();
+        scene_asset_manager_.reset();
 }
 
 /*

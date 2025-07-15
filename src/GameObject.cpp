@@ -6,15 +6,13 @@
 * DESCRIPTION   : Base class for game objects
 */
 #include "GameObject.h"
+#include <memory>
 
 
 
-GameObject::GameObject(AssetManager* asset_manager, float x, float y, float angle)
+GameObject::GameObject(std::unique_ptr<AssetManager> asset_manager, float x, float y, float angle)
+    : x(x), y(y), angle(angle), asset_manager_(std::move(asset_manager))
 {
-	this->asset_manager_ = asset_manager;
-	this->x = x;
-	this->y = y;
-	this->angle = angle;
 }
 
 GameObject::~GameObject()

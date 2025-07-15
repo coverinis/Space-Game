@@ -8,7 +8,7 @@
 #include "GameStateManager.h"
 
 
-GameLevel* GameStateManager::current_level;
+std::unique_ptr<GameLevel> GameStateManager::current_level;
 bool GameStateManager::Loading;
 
 GameStateManager::GameStateManager()
@@ -17,38 +17,45 @@ GameStateManager::GameStateManager()
 
 void GameStateManager::Init()
 {
-	Loading = true;
-	current_level = NULL;
+        Loading = true;
+        current_level.reset();
 }
 
-void GameStateManager::LoadInitialLevel(GameLevel* level)
+void GameStateManager::LoadInitialLevel(std::unique_ptr<GameLevel> level)
 {
-	current_level = level;
-	Loading = true;
-	current_level->Load();
-	Loading = false;
+        current_level = std::move(level);
+        Loading = true;
+        if (current_level) {
+                current_level->Load();
+        }
+        Loading = false;
 
 }
 
-void GameStateManager::SwitchLevel(GameLevel* level)
+void GameStateManager::SwitchLevel(std::unique_ptr<GameLevel> level)
 {
-	Loading = true;
-	current_level->Unload();
-	level->Load();
-	delete current_level;
-	current_level = level;
-	Loading = false;
+        Loading = true;
+        if (current_level) {
+                current_level->Unload();
+        }
+        if (level) {
+                level->Load();
+        }
+        current_level = std::move(level);
+        Loading = false;
 }
 
 void GameStateManager::Render()
 {
-	if(Loading) return;
-	current_level->Render();
+        if (Loading || !current_level)
+                return;
+        current_level->Render();
 }
 
 void GameStateManager::Update(int x, int y)
 {
-	if(Loading) return;
-	current_level->Update(x,y);
+        if (Loading || !current_level)
+                return;
+        current_level->Update(x,y);
 }
 
