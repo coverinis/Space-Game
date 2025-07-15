@@ -14,10 +14,10 @@
 
 Level1::Level1()
 {
-	audio_[1].Load("space-engine.wav");
+       audio_[1].Load("assets/audio/space-engine.wav");
 	playtime[1] = 11 * 1000;
-	audio_[2].Load("warpdrive02.wav");
-	audio_[3].Load("explosion-4.wav");
+       audio_[2].Load("assets/audio/warpdrive02.wav");
+       audio_[3].Load("assets/audio/explosion-4.wav");
 }
 
 
@@ -41,21 +41,21 @@ void Level1::Load()
 		* Based on a work at www.pipechoir.com
 		* Permissions beyond the scope of this license may be available at www.pipechoir.com or contact artist via email.
 		*/
-		audio_[0].Load("Fortress_Instrumental.wav");
+               audio_[0].Load("assets/audio/Fortress_Instrumental.wav");
 		playtime[0] = 248 * 1000;
 		break;
 	case 2:
 		/*
 		* Spacerace (ID 462) by Lobo Loco is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 License.
 		*/
-		audio_[0].Load("Spacerace.wav");
+               audio_[0].Load("assets/audio/Spacerace.wav");
 		playtime[0] = 431 * 1000;
 		break;
 	case 3:
 		/*
 		* Fairlight by Parvus Decree is licensed under a Attribution-NonCommercial-ShareAlike License.
 		*/
-		audio_[0].Load("Fairlight.wav");
+               audio_[0].Load("assets/audio/Fairlight.wav");
 		playtime[0] = 188 * 1000;
 		break;
 	default:
@@ -66,7 +66,7 @@ void Level1::Load()
 	time[0] = timeGetTime();
 
 	grid_ = new ScreenGrid(ship_x_,ship_y_);
-	scene_asset_manager_ = new AssetManager(L"SectorBackground.bmp", render_manager,0,1,0,0.78);
+       scene_asset_manager_ = new AssetManager(L"assets/images/SectorBackground.bmp", render_manager,0,1,0,0.78);
 
 	//Add Planets
 	for (int i = 0; i < grid_->grid_space.size(); ++i)
@@ -79,7 +79,7 @@ void Level1::Load()
 				break;
 			case PLANET1:
 				objects_.push_back(GameObject(
-					new AssetManager(L"Planet1.bmp", render_manager, 0, 1, 0, 0.78),
+                                       new AssetManager(L"assets/images/Planet1.bmp", render_manager, 0, 1, 0, 0.78),
 					grid_->grid_space[i][j][0],
 					grid_->grid_space[i][j][1],
 					0)
@@ -87,7 +87,7 @@ void Level1::Load()
 				break;
 			case PLANET2:
 				objects_.push_back(GameObject(
-					new AssetManager(L"Planet2.bmp", render_manager, 0, 1, 0, 0.78),
+                                       new AssetManager(L"assets/images/Planet2.bmp", render_manager, 0, 1, 0, 0.78),
 					grid_->grid_space[i][j][0],
 					grid_->grid_space[i][j][1],
 					0)
@@ -95,7 +95,7 @@ void Level1::Load()
 				break;
 			case PLANET3:
 				objects_.push_back(GameObject(
-					new AssetManager(L"Planet3.bmp", render_manager, 0, 1, 0, 0.78),
+                                       new AssetManager(L"assets/images/Planet3.bmp", render_manager, 0, 1, 0, 0.78),
 					grid_->grid_space[i][j][0],
 					grid_->grid_space[i][j][1],
 					0)
@@ -109,13 +109,13 @@ void Level1::Load()
 
 	//Add Ship
 	objects_.push_back(GameObject(
-		new AssetManager(L"ShipBase.bmp", render_manager, 0, 1, 0, 0.2),
+               new AssetManager(L"assets/images/ShipBase.bmp", render_manager, 0, 1, 0, 0.2),
 		grid_->grid_space[ship_x_][ship_y_][0],
 		grid_->grid_space[ship_x_][ship_y_][1],
 		0)
 	);
 	objects_.push_back(GameObject(
-		new AssetManager(L"ShipDetail.bmp", render_manager, 0, 1, 0, 0.2),
+               new AssetManager(L"assets/images/ShipDetail.bmp", render_manager, 0, 1, 0, 0.2),
 		grid_->grid_space[ship_x_][ship_y_][0],
 		grid_->grid_space[ship_x_][ship_y_][1],
 		0)
@@ -125,7 +125,7 @@ void Level1::Load()
 	if (ship_x_ == 0)
 	{
 		objects_.push_back(GameObject(
-			new AssetManager(L"EnemyShip.bmp", render_manager, 0, 0, 1, 0.78),
+                        new AssetManager(L"assets/images/EnemyShip.bmp", render_manager, 0, 0, 1, 0.78),
 			grid_->grid_space[9][ship_y_][0],
 			grid_->grid_space[9][ship_y_][1],
 			0)
@@ -134,7 +134,7 @@ void Level1::Load()
 	else if(ship_x_ == 9)
 	{
 		objects_.push_back(GameObject(
-			new AssetManager(L"EnemyShip.bmp", render_manager, 0, 0, 1, 0.78),
+                    new AssetManager(L"assets/images/EnemyShip.bmp", render_manager, 0, 0, 1, 0.78),
 			grid_->grid_space[0][ship_y_][0],
 			grid_->grid_space[0][ship_y_][1],
 			0)
@@ -143,7 +143,7 @@ void Level1::Load()
 	else if (ship_y_ == 0)
 	{
 		objects_.push_back(GameObject(
-			new AssetManager(L"EnemyShip.bmp", render_manager, 0, 0, 1, 0.78),
+                    new AssetManager(L"assets/images/EnemyShip.bmp", render_manager, 0, 0, 1, 0.78),
 			grid_->grid_space[ship_x_][9][0],
 			grid_->grid_space[ship_x_][9][1],
 			0)
@@ -152,7 +152,7 @@ void Level1::Load()
 	else if (ship_y_ == 9)
 	{
 		objects_.push_back(GameObject(
-			new AssetManager(L"EnemyShip.bmp", render_manager, 0, 0, 1, 0.78),
+                    new AssetManager(L"assets/images/EnemyShip.bmp", render_manager, 0, 0, 1, 0.78),
 			grid_->grid_space[ship_x_][0][0],
 			grid_->grid_space[ship_x_][0][1],
 			0)
