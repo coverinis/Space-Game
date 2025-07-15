@@ -1,151 +1,151 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="AssetManager.cpp">
+    <ClCompile Include="src/AssetManager.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="GameDefaults.cpp">
+    <ClCompile Include="src/GameDefaults.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="GameLevel.cpp">
+    <ClCompile Include="src/GameLevel.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="GameLoop.cpp">
+    <ClCompile Include="src/GameLoop.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="GameObject.cpp">
+    <ClCompile Include="src/GameObject.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="GameStateManager.cpp">
+    <ClCompile Include="src/GameStateManager.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Level1.cpp">
+    <ClCompile Include="src/Level1.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="RenderManager.cpp">
+    <ClCompile Include="src/RenderManager.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="ScreenGrid.cpp">
+    <ClCompile Include="src/ScreenGrid.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="stdafx.cpp">
+    <ClCompile Include="src/stdafx.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Wave.cpp">
+    <ClCompile Include="src/Wave.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Animation.cpp">
+    <ClCompile Include="src/Animation.cpp">
       <Filter>Source\Proto</Filter>
     </ClCompile>
-    <ClCompile Include="Character.cpp">
+    <ClCompile Include="src/Character.cpp">
       <Filter>Source\Proto</Filter>
     </ClCompile>
-    <ClCompile Include="Controls.cpp">
+    <ClCompile Include="src/Controls.cpp">
       <Filter>Source\Proto</Filter>
     </ClCompile>
-    <ClCompile Include="GameManager.cpp">
+    <ClCompile Include="src/GameManager.cpp">
       <Filter>Source\Proto</Filter>
     </ClCompile>
-    <ClCompile Include="Physics.cpp">
+    <ClCompile Include="src/Physics.cpp">
       <Filter>Source\Proto</Filter>
     </ClCompile>
-    <ClCompile Include="Scene.cpp">
+    <ClCompile Include="src/Scene.cpp">
       <Filter>Source\Proto</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AssetManager.h">
+    <ClInclude Include="include/AssetManager.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="GameDefaults.h">
+    <ClInclude Include="include/GameDefaults.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="GameLevel.h">
+    <ClInclude Include="include/GameLevel.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="GameObject.h">
+    <ClInclude Include="include/GameObject.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="GameStateManager.h">
+    <ClInclude Include="include/GameStateManager.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Level1.h">
+    <ClInclude Include="include/Level1.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="RenderManager.h">
+    <ClInclude Include="include/RenderManager.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
+    <ClInclude Include="include/resource.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="ScreenGrid.h">
+    <ClInclude Include="include/ScreenGrid.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="stdafx.h">
+    <ClInclude Include="include/stdafx.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Wave.h">
+    <ClInclude Include="include/Wave.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Animation.h">
+    <ClInclude Include="include/Animation.h">
       <Filter>Headers\Proto</Filter>
     </ClInclude>
-    <ClInclude Include="Character.h">
+    <ClInclude Include="include/Character.h">
       <Filter>Headers\Proto</Filter>
     </ClInclude>
-    <ClInclude Include="Controls.h">
+    <ClInclude Include="include/Controls.h">
       <Filter>Headers\Proto</Filter>
     </ClInclude>
-    <ClInclude Include="GameManager.h">
+    <ClInclude Include="include/GameManager.h">
       <Filter>Headers\Proto</Filter>
     </ClInclude>
-    <ClInclude Include="Physics.h">
+    <ClInclude Include="include/Physics.h">
       <Filter>Headers\Proto</Filter>
     </ClInclude>
-    <ClInclude Include="Scene.h">
+    <ClInclude Include="include/Scene.h">
       <Filter>Headers\Proto</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Media Include="explosion-4.wav">
+    <Media Include="assets/audio/explosion-4.wav">
       <Filter>Ressources</Filter>
     </Media>
-    <Media Include="Fairlight.wav">
+    <Media Include="assets/audio/Fairlight.wav">
       <Filter>Ressources</Filter>
     </Media>
-    <Media Include="Fortress_Instrumental.wav">
+    <Media Include="assets/audio/Fortress_Instrumental.wav">
       <Filter>Ressources</Filter>
     </Media>
-    <Media Include="space-engine.wav">
+    <Media Include="assets/audio/space-engine.wav">
       <Filter>Ressources</Filter>
     </Media>
-    <Media Include="Spacerace.wav">
+    <Media Include="assets/audio/Spacerace.wav">
       <Filter>Ressources</Filter>
     </Media>
-    <Media Include="warpdrive02.wav">
+    <Media Include="assets/audio/warpdrive02.wav">
       <Filter>Ressources</Filter>
     </Media>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="EnemyShip.bmp">
+    <Image Include="assets/images/EnemyShip.bmp">
       <Filter>Ressources</Filter>
     </Image>
-    <Image Include="Planet1.bmp">
+    <Image Include="assets/images/Planet1.bmp">
       <Filter>Ressources</Filter>
     </Image>
-    <Image Include="Planet2.bmp">
+    <Image Include="assets/images/Planet2.bmp">
       <Filter>Ressources</Filter>
     </Image>
-    <Image Include="Planet3.bmp">
+    <Image Include="assets/images/Planet3.bmp">
       <Filter>Ressources</Filter>
     </Image>
-    <Image Include="SectorBackground.bmp">
+    <Image Include="assets/images/SectorBackground.bmp">
       <Filter>Ressources</Filter>
     </Image>
-    <Image Include="ShipBase.bmp">
+    <Image Include="assets/images/ShipBase.bmp">
       <Filter>Ressources</Filter>
     </Image>
-    <Image Include="ShipDetail.bmp">
+    <Image Include="assets/images/ShipDetail.bmp">
       <Filter>Ressources</Filter>
     </Image>
   </ItemGroup>

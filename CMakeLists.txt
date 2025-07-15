@@ -9,9 +9,9 @@ find_package(PkgConfig REQUIRED)
 pkg_search_module(GLFW REQUIRED glfw3)
 
 add_executable(space_game
-    Space-Game/main.cpp
-    Space-Game/VulkanRenderer.cpp
+    src/main.cpp
+    src/VulkanRenderer.cpp
 )
 
-target_include_directories(space_game PRIVATE ${GLFW_INCLUDE_DIRS})
+target_include_directories(space_game PRIVATE ${GLFW_INCLUDE_DIRS} include)
 target_link_libraries(space_game PRIVATE Vulkan::Vulkan ${GLFW_LIBRARIES})

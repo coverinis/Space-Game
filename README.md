@@ -5,6 +5,12 @@ uses GLFW for window creation and event handling and a small `VulkanRenderer`
 class for initialization. The project can be built on Linux and Windows using
 CMake and the official Vulkan SDK.
 
+## Project structure
+
+- `src/` contains all C++ source files
+- `include/` holds header files
+- `assets/` stores game resources like images and audio
+
 ## Building
 
 ```

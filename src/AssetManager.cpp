@@ -6,6 +6,7 @@
 * DESCRIPTION   : Load and Manage game assets
 */
 #include "AssetManager.h"
+#include <string>
 
 
 AssetManager::AssetManager(wchar_t* file_name, RenderManager* render_manager, float r, float g, float b, float t)
@@ -76,8 +77,9 @@ AssetManager::AssetManager(wchar_t* file_name, RenderManager* render_manager, fl
 	effect_chroma_key->SetValue(D2D1_CHROMAKEY_PROP_INVERT_ALPHA, false);
 	effect_chroma_key->GetOutput(&image_);
 
-	//Change colour for ship detail
-	if (file_name == L"ShipDetail.bmp")
+        //Change colour for ship detail
+        std::wstring fileNameStr(file_name);
+        if (fileNameStr.find(L"ShipDetail.bmp") != std::wstring::npos)
 	{
 		ID2D1Effect* colorMatrixEffect;
 		render_manager->GetRenderTarget()->CreateEffect(CLSID_D2D1ColorMatrix, &colorMatrixEffect);

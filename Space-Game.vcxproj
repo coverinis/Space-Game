@@ -151,59 +151,59 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Animation.cpp" />
-    <ClCompile Include="AssetManager.cpp" />
-    <ClCompile Include="Controls.cpp" />
-    <ClCompile Include="GameDefaults.cpp" />
-    <ClCompile Include="GameLevel.cpp" />
-    <ClCompile Include="GameLoop.cpp" />
-    <ClCompile Include="GameManager.cpp" />
-    <ClCompile Include="GameStateManager.cpp" />
-    <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="Level1.cpp" />
-    <ClCompile Include="Physics.cpp" />
-    <ClCompile Include="RenderManager.cpp" />
-    <ClCompile Include="Scene.cpp" />
-    <ClCompile Include="ScreenGrid.cpp" />
-    <ClCompile Include="Character.cpp" />
-    <ClCompile Include="stdafx.cpp" />
-    <ClCompile Include="Wave.cpp" />
+    <ClCompile Include="src/Animation.cpp" />
+    <ClCompile Include="src/AssetManager.cpp" />
+    <ClCompile Include="src/Controls.cpp" />
+    <ClCompile Include="src/GameDefaults.cpp" />
+    <ClCompile Include="src/GameLevel.cpp" />
+    <ClCompile Include="src/GameLoop.cpp" />
+    <ClCompile Include="src/GameManager.cpp" />
+    <ClCompile Include="src/GameStateManager.cpp" />
+    <ClCompile Include="src/GameObject.cpp" />
+    <ClCompile Include="src/Level1.cpp" />
+    <ClCompile Include="src/Physics.cpp" />
+    <ClCompile Include="src/RenderManager.cpp" />
+    <ClCompile Include="src/Scene.cpp" />
+    <ClCompile Include="src/ScreenGrid.cpp" />
+    <ClCompile Include="src/Character.cpp" />
+    <ClCompile Include="src/stdafx.cpp" />
+    <ClCompile Include="src/Wave.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Animation.h" />
-    <ClInclude Include="AssetManager.h" />
-    <ClInclude Include="Controls.h" />
-    <ClInclude Include="GameDefaults.h" />
-    <ClInclude Include="GameLevel.h" />
-    <ClInclude Include="GameManager.h" />
-    <ClInclude Include="GameStateManager.h" />
-    <ClInclude Include="GameObject.h" />
-    <ClInclude Include="Level1.h" />
-    <ClInclude Include="Physics.h" />
-    <ClInclude Include="RenderManager.h" />
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="Scene.h" />
-    <ClInclude Include="ScreenGrid.h" />
-    <ClInclude Include="Character.h" />
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="Wave.h" />
+    <ClInclude Include="include/Animation.h" />
+    <ClInclude Include="include/AssetManager.h" />
+    <ClInclude Include="include/Controls.h" />
+    <ClInclude Include="include/GameDefaults.h" />
+    <ClInclude Include="include/GameLevel.h" />
+    <ClInclude Include="include/GameManager.h" />
+    <ClInclude Include="include/GameStateManager.h" />
+    <ClInclude Include="include/GameObject.h" />
+    <ClInclude Include="include/Level1.h" />
+    <ClInclude Include="include/Physics.h" />
+    <ClInclude Include="include/RenderManager.h" />
+    <ClInclude Include="include/resource.h" />
+    <ClInclude Include="include/Scene.h" />
+    <ClInclude Include="include/ScreenGrid.h" />
+    <ClInclude Include="include/Character.h" />
+    <ClInclude Include="include/stdafx.h" />
+    <ClInclude Include="include/Wave.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="EnemyShip.bmp" />
-    <Image Include="Planet1.bmp" />
-    <Image Include="Planet2.bmp" />
-    <Image Include="Planet3.bmp" />
-    <Image Include="SectorBackground.bmp" />
-    <Image Include="ShipBase.bmp" />
-    <Image Include="ShipDetail.bmp" />
+    <Image Include="assets/images/EnemyShip.bmp" />
+    <Image Include="assets/images/Planet1.bmp" />
+    <Image Include="assets/images/Planet2.bmp" />
+    <Image Include="assets/images/Planet3.bmp" />
+    <Image Include="assets/images/SectorBackground.bmp" />
+    <Image Include="assets/images/ShipBase.bmp" />
+    <Image Include="assets/images/ShipDetail.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <Media Include="explosion-4.wav" />
-    <Media Include="Fairlight.wav" />
-    <Media Include="Fortress_Instrumental.wav" />
-    <Media Include="space-engine.wav" />
-    <Media Include="Spacerace.wav" />
-    <Media Include="warpdrive02.wav" />
+    <Media Include="assets/audio/explosion-4.wav" />
+    <Media Include="assets/audio/Fairlight.wav" />
+    <Media Include="assets/audio/Fortress_Instrumental.wav" />
+    <Media Include="assets/audio/space-engine.wav" />
+    <Media Include="assets/audio/Spacerace.wav" />
+    <Media Include="assets/audio/warpdrive02.wav" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
