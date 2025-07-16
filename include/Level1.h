@@ -12,12 +12,13 @@
 #include <tuple>
 #include "GameObject.h"
 #include "Wave.h"
+#include <memory>
 
 class Level1: public GameLevel
 {
 	int ship_x_ = 0;
 	int ship_y_ = 4;
-	AssetManager* scene_asset_manager_;
+        std::unique_ptr<AssetManager> scene_asset_manager_;
 	std::vector<CWave> audio_ = {
 		CWave(),
 		CWave(),
@@ -34,7 +35,7 @@ class Level1: public GameLevel
 	};
 	std::vector<GameObject> objects_;
 
-	ScreenGrid* grid_;
+        std::unique_ptr<ScreenGrid> grid_;
 public:
 	Level1();
 	~Level1();

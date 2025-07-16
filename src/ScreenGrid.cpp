@@ -32,25 +32,25 @@ ScreenGrid::ScreenGrid()
 			else if ((rand() % 20 + 1) == 20)
 			{
 				//Randomly generate planet
-				switch (rand() % 3)
-				{
-				case 0:
-					grid_space[x][y][2] = PLANET1;
-					break;
-				case 1:
-					grid_space[x][y][2] = PLANET2;
-					break;
-				case 2:
-					grid_space[x][y][2] = PLANET3;
-					break;
-				default:
-					break;
-				}
-			}
-			else
-			{
-				grid_space[x][y][2] = NONE;
-			}
+                                switch (rand() % 3)
+                                {
+                                case 0:
+                                        grid_space[x][y][2] = static_cast<float>(GridObject::Planet1);
+                                        break;
+                                case 1:
+                                        grid_space[x][y][2] = static_cast<float>(GridObject::Planet2);
+                                        break;
+                                case 2:
+                                        grid_space[x][y][2] = static_cast<float>(GridObject::Planet3);
+                                        break;
+                                default:
+                                        break;
+                                }
+                        }
+                        else
+                        {
+                                grid_space[x][y][2] = static_cast<float>(GridObject::None);
+                        }
 		}
 	}
 }
@@ -81,31 +81,31 @@ ScreenGrid::ScreenGrid(int ship_x, int ship_y)
 			//reserve space for provided ship position
 			if (x == ship_x && y == ship_y)
 			{
-				grid_space[x][y][2] = NONE;
-			}
-			//Randomly fill grid space
-			else if ((rand() % 20 + 1) == 20)
-			{
-				//Randomly generate planet
-				switch (rand() % 3)
-				{
-				case 0:
-					grid_space[x][y][2] = PLANET1;
-					break;
-				case 1:
-					grid_space[x][y][2] = PLANET2;
-					break;
-				case 2:
-					grid_space[x][y][2] = PLANET3;
-					break;
-				default:
-					break;
-				}
-			}
-			else
-			{
-				grid_space[x][y][2] = NONE;
-			}
+                                grid_space[x][y][2] = static_cast<float>(GridObject::None);
+                        }
+                        //Randomly fill grid space
+                        else if ((rand() % 20 + 1) == 20)
+                        {
+                                //Randomly generate planet
+                                switch (rand() % 3)
+                                {
+                                case 0:
+                                        grid_space[x][y][2] = static_cast<float>(GridObject::Planet1);
+                                        break;
+                                case 1:
+                                        grid_space[x][y][2] = static_cast<float>(GridObject::Planet2);
+                                        break;
+                                case 2:
+                                        grid_space[x][y][2] = static_cast<float>(GridObject::Planet3);
+                                        break;
+                                default:
+                                        break;
+                                }
+                        }
+                        else
+                        {
+                                grid_space[x][y][2] = static_cast<float>(GridObject::None);
+                        }
 		}
 	}
 }
