@@ -23,7 +23,8 @@ int main() {
         renderer.init(window.get());
     } catch (const std::exception& e) {
         std::cerr << e.what() << std::endl;
-        glfwDestroyWindow(window);
+        // window will be automatically destroyed when the unique_ptr goes out
+        // of scope, so we just terminate GLFW here
         glfwTerminate();
         return -1;
     }
